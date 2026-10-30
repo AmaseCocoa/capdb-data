@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "NoodleProduct",
   "type": "object",
-  "required": ["jan", "name", "has_drain", "wait_minutes", "steps", "links"],
+  "required": ["jan", "name", "has_drain", "wait_minutes", "links"],
   "additionalProperties": false,
   "properties": {
     "jan": {
