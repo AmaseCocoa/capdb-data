@@ -1,7 +1,7 @@
 name: 🍜 カップ麺データの追加・修正
 description: 新しいカップ麺の登録や、間違っているデータの修正をフォームからリクエストします。
 title: "[データ追加/修正]: "
-labels: ["data"]
+labels: ["データ追加・修正"]
 body:
   - type: markdown
     attributes:
