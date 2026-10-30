@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NoodleProduct",
+  "type": "object",
+  "required": ["jan", "name", "has_drain", "wait_minutes", "steps", "links"],
+  "additionalProperties": false,
+  "properties": {
+    "jan": {
+      "type": "string",
+      "description": "13桁のJANコード（半角数字）",
+      "pattern": "^[0-9]{13}$"
+    },
+    "name": {
+      "type": "string",
+      "description": "商品の正式名称",
+      "minLength": 1
+    },
+    "has_drain": {
+      "type": "boolean",
+      "description": "湯切りが必要な商品（焼きそば等）なら true"
+    },
+    "wait_minutes": {
+      "type": "number",
+      "description": "熱湯を注いでから湯切り・食べるまでの時間（分）",
+      "minimum": 0,
+      "maximum": 15
+    },
+    "links": {
+      "type": "object",
+      "description": "公式情報へのリンク",
+      "required": ["official"],
+      "additionalProperties": false,
+      "properties": {
+        "official": {
+          "type": "string",
+          "format": "uri",
+          "description": "メーカー公式の商品カタログ・ブランドページのURL"
+        }
+      }
+    }
+  }
+}
+
