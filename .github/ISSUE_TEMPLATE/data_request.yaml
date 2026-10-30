@@ -1,0 +1,58 @@
+name: 🍜 カップ麺データの追加・修正
+description: 新しいカップ麺の登録や、間違っているデータの修正をフォームからリクエストします。
+title: "[データ追加/修正]: "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ご協力ありがとうございます！データの追加・修正リクエストを受け付けます。
+        分かる範囲で構いませんので、フォームへの入力をお願いします。
+
+  - type: checkboxes
+    id: request-type
+    attributes:
+      label: リクエストの種類
+      options:
+        - label: 新しいカップ麺データを追加したい
+          required: true
+        - label: 既存のカップ麺データを修正したい
+          required: false
+
+  - type: input
+    id: product-name
+    attributes:
+      label: 商品名
+    validations:
+      required: true
+
+  - type: input
+    id: jan-code
+    attributes:
+      label: JANコード (バーコードの数字)
+      placeholder: "例: 4902105002604 (13桁または8桁の数字)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: cooking-time
+    attributes:
+      label: 調理時間（分）
+      description: パッケージに記載されている待ち時間を選択してください。
+      options:
+        - "1分"
+        - "2分"
+        - "3分"
+        - "4分"
+        - "5分"
+        - "その他（備考欄に記入）"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: 補足・参考情報
+      placeholder: "公式HPの製品URLや、その他を選択した場合は調理時間、修正の場合はその理由などをご記入ください。"
+    validations:
+      required: false
