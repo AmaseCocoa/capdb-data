@@ -1,0 +1,9 @@
+{
+  "jan": "4902105278406",
+  "name": "テストラーメン",
+  "has_drain": false,
+  "wait_seconds": 180,
+  "links": {
+    "official": "https://example.com"
+  }
+}
