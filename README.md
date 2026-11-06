@@ -1,11 +1,11 @@
-# capdb-data
-CapDB用のデータです。
+# ramen-db
+Ramen Timer用のデータです。
 
-通常はこれを直接使用する必要はありません。webフロントエンドをご利用ください: https://github.com/AmaseCocoa/capdb
+通常はこれを直接使用する必要はありません。webフロントエンドをご利用ください: https://github.com/AmaseCocoa/ramen-timer
 
 <!-- TODO
 ## API
-試験的にAPIを公開しています。ぜひご利用ください。: `https://capdb-api.amase.cc`
+試験的にAPIを公開しています。ぜひご利用ください。: `https://ramendb.amase.cc`
 
 ### MCP
 なんと、このAPIは謎にMCPを実装しています。これで、あなたもLLMからカップラーメンの時間を簡単に取得できます！
