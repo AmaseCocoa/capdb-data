@@ -3,6 +3,10 @@ Ramen Timer用のデータです。
 
 通常はこれを直接使用する必要はありません。webフロントエンドをご利用ください: https://github.com/AmaseCocoa/ramen-timer
 
+## 自動タグ
+GitHub Actionsで毎時17分、または「Tag changes」の手動実行時に、デフォルトブランチの最新コミットを確認します。
+最新コミットにタグがない場合のみ、UTC日時形式のタグ（例: `v20261106090000`）を作成します。初回もタグを作成します。
+
 <!-- TODO
 ## API
 試験的にAPIを公開しています。ぜひご利用ください。: `https://ramendb.amase.cc`
