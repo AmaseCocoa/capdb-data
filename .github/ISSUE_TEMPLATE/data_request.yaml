@@ -16,6 +16,7 @@ body:
       options:
         - label: 新しいカップ麺データを追加したい
           required: true
+          value: true
         - label: 既存のカップ麺データを修正したい
           required: false
 
