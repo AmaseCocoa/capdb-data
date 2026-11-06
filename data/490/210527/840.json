@@ -1,9 +1,9 @@
 {
   "jan": "4902105278406",
-  "name": "テストラーメン",
+  "name": "HIKAKIN PREMIUM みそきん 濃厚味噌ラーメン",
   "has_drain": false,
-  "wait_seconds": 180,
+  "wait_seconds": 300,
   "links": {
-    "official": "https://example.com"
+    "official": "https://misokin.jp/#misokin"
   }
 }
