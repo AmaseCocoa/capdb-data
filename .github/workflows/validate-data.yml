@@ -1,0 +1,24 @@
+name: Validate product JSON
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+  pull-requests: read
+concurrency:
+  group: validate-data-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      # 検証コードとスキーマはbase側を使い、PR側からの書き換えを防ぐ。
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { run } = require('./.github/scripts/validate-pr.cjs');
+            await run({ github, context, core });

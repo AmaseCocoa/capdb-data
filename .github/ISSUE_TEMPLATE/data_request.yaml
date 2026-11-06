@@ -1,58 +1,55 @@
 name: 🍜 カップ麺データの追加・修正
-description: 新しいカップ麺の登録や、間違っているデータの修正をフォームからリクエストします。
+description: カップ麺データの追加・修正をリクエストします。
 title: "[データ追加/修正]: "
 labels: ["データ追加・修正"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ご協力ありがとうございます！データの追加・修正リクエストを受け付けます。
-        分かる範囲で構いませんので、フォームへの入力をお願いします。
-
-  - type: checkboxes
+  - type: dropdown
     id: request-type
     attributes:
       label: リクエストの種類
-      options:
-        - label: 新しいカップ麺データを追加したい
-          required: true
-        - label: 既存のカップ麺データを修正したい
-          required: false
-
+      options: [追加, 修正]
+    validations:
+      required: true
   - type: input
     id: product-name
     attributes:
       label: 商品名
     validations:
       required: true
-
   - type: input
     id: jan-code
     attributes:
       label: JANコード (バーコードの数字)
-      placeholder: "例: 4902105002604 (13桁または8桁の数字)"
+      description: EAN-13形式の13桁の半角数字（チェックディジットを含む）
+      placeholder: "4902105284919"
     validations:
       required: true
-
-  - type: dropdown
+  - type: input
     id: cooking-time
     attributes:
-      label: 調理時間（分）
-      description: パッケージに記載されている待ち時間を選択してください。
-      options:
-        - "1分"
-        - "2分"
-        - "3分"
-        - "4分"
-        - "5分"
-        - "その他（備考欄に記入）"
+      label: 調理時間（秒）
+      description: 0〜900 の整数。3分なら180、4分なら240。
+      placeholder: "180"
     validations:
       required: true
-
+  - type: dropdown
+    id: has-drain
+    attributes:
+      label: 湯切り
+      options: [不要, 必要]
+    validations:
+      required: true
+  - type: input
+    id: official-url
+    attributes:
+      label: 公式URL
+      description: メーカーの商品情報のURL（http または https）
+    validations:
+      required: true
   - type: textarea
     id: reference
     attributes:
       label: 補足・参考情報
-      placeholder: "公式HPの製品URLや、その他を選択した場合は調理時間、修正の場合はその理由などをご記入ください。"
+      description: 修正理由など。JSONには含まれません。
     validations:
       required: false
